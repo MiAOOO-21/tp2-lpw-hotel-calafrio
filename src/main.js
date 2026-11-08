@@ -23,8 +23,8 @@ const CONFIGURACAO = {
     //lista de cenas
     scene: [
         CenaCarregamento,
-        CenaTitulo//,
-        //CenaCutscene,
+        CenaTitulo,
+        CenaCutscene//,
         //CenaHotel,
         //CenaDesafioQuiz,
         //CenaDesafioMemoria,

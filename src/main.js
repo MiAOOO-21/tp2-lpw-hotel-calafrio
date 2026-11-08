@@ -15,10 +15,23 @@ const CONFIGURACAO = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { x: 0, y: 0},
+            gravity: { x: 0, y: 0 },
             debug: MODO_DEBUG
         }
-    } //ativa a física no jogo (sem gravidade)
+    }, //ativa a física no jogo (sem gravidade)
+
+    //lista de cenas
+    scene: [
+        CenaCarregamento,
+        CenaTitulo//,
+        //CenaCutscene,
+        //CenaHotel,
+        //CenaDesafioQuiz,
+        //CenaDesafioMemoria,
+        //CenaDesafioReflexo,
+        //CenaBatalha,
+        //CenaCreditos
+    ]
 }
 
 //Cria o jogo

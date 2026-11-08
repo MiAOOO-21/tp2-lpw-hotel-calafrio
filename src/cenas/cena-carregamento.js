@@ -27,6 +27,10 @@ class CenaCarregamento extends Phaser.Scene {
         //Imagem do título
         this.load.image('titulo_fundo', 'assets/interface/titulo_fundo.jpg')
 
+        //Batalha
+        this.load.image('batalha_fundo', 'assets/batalha/batalha_fundo.jpg')
+        this.load.image('boss_fera', 'assets/batalha/boss_fera.png')
+
         //Mapa do Tiled
         this.load.image('tileset', 'assets/mapas/tileset.png')
         this.load.tilemapTiledJSON('mapa_hotel', 'assets/mapas/hotel.json')

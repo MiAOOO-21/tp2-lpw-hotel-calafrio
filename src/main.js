@@ -28,9 +28,9 @@ const CONFIGURACAO = {
         CenaHotel,
         CenaDesafioQuiz,
         CenaDesafioMemoria,
-        CenaDesafioReflexo/*,
+        CenaDesafioReflexo,
         CenaBatalha,
-        CenaCreditos*/
+        CenaCreditos
     ]
 }
 

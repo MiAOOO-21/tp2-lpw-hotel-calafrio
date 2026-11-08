@@ -30,6 +30,26 @@ class CenaCarregamento extends Phaser.Scene {
         //Mapa do Tiled
         this.load.image('tileset', 'assets/mapas/tileset.png')
         this.load.tilemapTiledJSON('mapa_hotel', 'assets/mapas/hotel.json')
+
+        //Personagens
+        this.load.spritesheet('jogador', 'assets/sprites/jogador.png', {
+            frameWidth: 32,
+            frameHeight: 32
+        })
+
+        //Porta do Boss
+        this.load.spritesheet('porta_mestre', 'assets/sprites/porta_mestre.png', {
+            frameWidth: 64,
+            frameHeight: 32
+        })
+
+        // Sprites dos NPCs
+        for (const id in PERSONAGENS) {
+            const textura = PERSONAGENS[id].textura
+            this.load.image(textura, `assets/sprites/${textura}.png`)
+        }
+        this.load.image('taca', 'assets/sprites/taca.png')
+
     }
 
     // Faz a barrinha de progresso
@@ -60,9 +80,30 @@ class CenaCarregamento extends Phaser.Scene {
             if (this.textures.exists(chave)) {
                 this.textures.get(chave).setFilter(Phaser.Textures.FilterMode.LINEAR)
             }
-        });
+        })
+
+        this.criarAnimacoes()
 
         // Se estiver tudo pronto, vai para a tela de título
         this.scene.start('CenaTitulo')
+    }
+
+    criarAnimacoes() {
+        const direcoes = ['baixo', 'esquerda', 'direita', 'cima'];
+
+        direcoes.forEach((direcao, linha) => {
+            const primeiro = linha * 3   // quadro inicial desta linha
+
+            // Animação de andar: parado -> passo 1 -> parado -> passo 2
+            this.anims.create({
+                key: `andar_${direcao}`,
+                frames: this.anims.generateFrameNumbers('jogador', {
+                    frames: [primeiro, primeiro + 1, primeiro, primeiro + 2]
+                }),
+                frameRate: 8,     // quadros por segundo
+                repeat: -1        // repete para sempre
+            })
+        })
+
     }
 }

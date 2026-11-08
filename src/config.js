@@ -5,6 +5,12 @@ console.log('configurações carregadas')
 const LARGURA_TELA = 960
 const ALTURA_TELA = 540
 
+const TAMANHO_TILE = 32
+
+const VELOCIDADE_JOGADOR = 150
+
+const DISTANCIA_CONVERSA = 70
+
 //Velocidade de digitação dos textos
 const VELOCIDADE_TEXTO = 25
 

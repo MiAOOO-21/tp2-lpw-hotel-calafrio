@@ -24,8 +24,8 @@ const CONFIGURACAO = {
     scene: [
         CenaCarregamento,
         CenaTitulo,
-        CenaCutscene//,
-        //CenaHotel,
+        CenaCutscene,
+        CenaHotel//,
         //CenaDesafioQuiz,
         //CenaDesafioMemoria,
         //CenaDesafioReflexo,

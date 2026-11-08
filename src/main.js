@@ -25,12 +25,12 @@ const CONFIGURACAO = {
         CenaCarregamento,
         CenaTitulo,
         CenaCutscene,
-        CenaHotel//,
-        //CenaDesafioQuiz,
-        //CenaDesafioMemoria,
-        //CenaDesafioReflexo,
-        //CenaBatalha,
-        //CenaCreditos
+        CenaHotel,
+        CenaDesafioQuiz,
+        CenaDesafioMemoria,
+        CenaDesafioReflexo/*,
+        CenaBatalha,
+        CenaCreditos*/
     ]
 }
 

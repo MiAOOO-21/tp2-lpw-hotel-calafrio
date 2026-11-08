@@ -24,7 +24,7 @@ class CenaTitulo extends Phaser.Scene {
           color: '#ff5a8c',
           stroke: '#1a0010',
           strokeThickness: 8
-        }).setOrigin(0.5);   // 0.5 = centralizado
+        }).setOrigin(0.5)   // 0.5 = centralizado
         // */
 
         // Subtítulo
@@ -61,6 +61,6 @@ class CenaTitulo extends Phaser.Scene {
         this.cameras.main.once('camerafadeoutcomplete', () => {
             // Passa um objeto de dados para a próxima cena: ela vai recebê-lo no método init(dados).
             this.scene.start('CenaCutscene', { id: 'abertura' })
-        });
+        })
     }
 }

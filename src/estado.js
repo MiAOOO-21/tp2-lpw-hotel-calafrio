@@ -9,14 +9,14 @@ function criaEstadoInicial() {
         vidaMaxima: 60,
         ataque: 8,
         defesa: 2,
-        champanhe: 0,
+        champanhes: 0,
         temSino: false,
 
         //Progresso das missões
         missaoAtual: 0,
         etapa: 'falarComGerente',
         buscaAtiva: false,
-        tacasColetada: 0
+        tacasColetadas: 0
     }
 }
 

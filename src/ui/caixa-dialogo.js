@@ -11,14 +11,14 @@ class CaixaDialogo {
         this.aoTerminar = null    // função para chamar quando a conversa acabar
 
         // Medidas da caixa
-        const margem = 5; // 5
+        const margem = 5 // 5
         const largura = LARGURA_TELA - margem * 2
-        const altura = 80; // 140
-        const x = margem;
+        const altura = 80 // 140
+        const x = margem
         const y = ALTURA_TELA - altura - margem
 
         // Fundo da caixa
-        const fundo = desenharPainel(cena, x, y, largura, altura);
+        const fundo = desenharPainel(cena, x, y, largura, altura)
 
         // Nome de quem está falando
         this.textoNome = cena.add.text(x + 20, y - 40, '', {
@@ -27,27 +27,27 @@ class CaixaDialogo {
             color: CORES.textoDestaque,
             stroke: '#000000',
             strokeThickness: 5
-        });
+        })
 
         // O texto da fala
         this.textoFala = cena.add.text(x + 20, y + 10, '', {
             ...ESTILO_TEXTO,
             lineSpacing: 6,
             wordWrap: { width: largura - 50, useAdvancedWrap: true }
-        });
+        })
 
         // Setinha para passar o texto
         this.seta = cena.add.text(x + largura - 34, y + altura - 34, '▼', {
             ...ESTILO_TEXTO,
             color: CORES.textoDestaque
-        });
+        })
         cena.tweens.add({
             targets: this.seta,
             alpha: 0.2,
             duration: 400,
             yoyo: true,     // vai e volta
             repeat: -1      // -1 = repete para sempre
-        });
+        })
 
         // Deixa os parâmetros da caixa em um container
         this.container = cena.add.container(0, 0, [fundo, this.textoNome, this.textoFala, this.seta])
@@ -71,7 +71,7 @@ class CaixaDialogo {
 
     // Acelera o texto da caixa ou passa para a próxima (igual em Pokémon)
     avancar() {
-        if (!this.aberta) return;
+        if (!this.aberta) return
 
         if (this.digitando) {
             this.completarTexto()
@@ -86,15 +86,15 @@ class CaixaDialogo {
         const texto = this.paginas.shift()
 
         if (texto === undefined) {
-            this.fechar();
-            return;
+            this.fechar()
+            return
         }
         this.digitarTexto(texto)
     }
 
     // Efeito de digitação com uma letra de cada vez
     digitarTexto(texto) {
-        this.textoCompleto = this.textoFala.getWrappedText(texto).join('\n');
+        this.textoCompleto = this.textoFala.getWrappedText(texto).join('\n')
         this.letrasMostradas = 0
         this.textoFala.setText('')
         this.seta.setVisible(false)
@@ -105,8 +105,8 @@ class CaixaDialogo {
 
         // Se o texto está vazio, então não tem nada para digitar
         if (this.textoCompleto.length === 0) {
-            this.completarTexto();
-            return;
+            this.completarTexto()
+            return
         }
 
         // Um timer que roda a função callback várias vezes seguidas
@@ -121,7 +121,7 @@ class CaixaDialogo {
                     this.completarTexto()
                 }
             }
-        });
+        })
     }
 
     // Pula o efeito e mostra o texto inteiro de uma vez
@@ -134,7 +134,7 @@ class CaixaDialogo {
 
     // Esconde a caixa e avisa quem estava esperando o fim da conversa
     fechar() {
-        this.aberta = false;
+        this.aberta = false
         this.container.setVisible(false)
 
         // Callback para encontrar a próxima caixa já limpa

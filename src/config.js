@@ -15,7 +15,7 @@ const DISTANCIA_CONVERSA = 70
 const VELOCIDADE_TEXTO = 25
 
 //Faz o Phaser mostrar as caixas de colisão
-const MODO_DEBUG = true
+const MODO_DEBUG = false
 
 const CORES = {
     fundoCaixa: 0x120812, //fundo das caixas de texto

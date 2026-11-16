@@ -63,6 +63,8 @@ class CenaCutscene extends Phaser.Scene {
         this.input.on('pointerdown', () => this.avancar({ repeat: false }))
         this.input.keyboard.on('keydown-ESC', () => this.terminar())
 
+        tocarMusica(this, this.cutscene.musica)
+
         this.proximoQuadro()
     }
 

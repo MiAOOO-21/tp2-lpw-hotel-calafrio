@@ -33,6 +33,8 @@ class CenaBatalha extends Phaser.Scene {
         this.criarInterface()
         this.atualizarBarras()
 
+        tocarMusica(this, 'musica_batalha')
+
         this.cameras.main.fadeIn(600)
 
         this.novoTurno('A Fera dos Aposentos bloqueia o caminho!')

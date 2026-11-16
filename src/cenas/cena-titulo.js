@@ -45,6 +45,8 @@ class CenaTitulo extends Phaser.Scene {
 
         this.tweens.add({ targets: aperte, alpha: 0.15, duration: 700, yoyo: true, repeat: -1 })
 
+        tocarMusica(this, 'musica_abertura')
+
         // Usei o "once" para evitar começar o jogo duas vezes
         this.input.keyboard.once('keydown-ENTER', () => this.comecarJogo())
         this.input.once('pointerdown', () => this.comecarJogo())

@@ -54,6 +54,15 @@ class CenaCarregamento extends Phaser.Scene {
         }
         this.load.image('taca', 'assets/sprites/taca.png')
 
+        // Músicas
+        this.load.audio('musica_abertura', 'assets/audio/js-calafrios.mp3');
+        this.load.audio('musica_hotel',    'assets/audio/js-hotelcalafrio.mp3');
+        this.load.audio('musica_batalha',  'assets/audio/js-afera.mp3');
+        this.load.audio('musica_final',    'assets/audio/js-encaboclado.mp3');
+
+        //Efeitos sonoros
+        // vou ficar devendo :(
+
     }
 
     // Faz a barrinha de progresso

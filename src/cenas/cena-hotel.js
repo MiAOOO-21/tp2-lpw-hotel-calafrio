@@ -21,6 +21,8 @@ class CenaHotel extends Phaser.Scene {
         this.criarInterface()
         this.atualizarInterface()
 
+        tocarMusica(this, 'musica_hotel')
+
         this.cameras.main.fadeIn(600)
 
         // Ensina os controles

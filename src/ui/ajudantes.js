@@ -7,6 +7,16 @@ function esperar(cena, milissegundos) {
   })
 }
 
+// Toca as músicas
+function tocarMusica(cena, chave) {
+  // para todos os sons
+  cena.sound.stopAll()
+  // se carregou toca em loop, senão fica mudo
+  if (chave && cena.cache.audio.exists(chave)) {
+    cena.sound.play(chave, { loop: true, volume: 0.5})
+  }
+}
+
 // Fundo das caixas de diálogo
 function desenharPainel(cena, x, y, largura, altura) {
   const painel = cena.add.graphics()

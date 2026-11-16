@@ -4,6 +4,7 @@ const CUTSCENES = {
     // Início do jogo
     abertura: {
         proximaCena: 'CenaHotel',
+        musica: 'musica_abertura',
         quadros: [
             {
                 imagem: 'abertura_1',
@@ -43,6 +44,7 @@ const CUTSCENES = {
     // Encerramento com gancho para continuação
     final: {
         proximaCena: 'CenaCreditos',
+        musica: 'musica_final',
         quadros: [
             {
                 imagem: 'final_1',

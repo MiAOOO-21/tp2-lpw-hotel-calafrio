@@ -24,7 +24,7 @@ class CenaCreditos extends Phaser.Scene {
             '# Arte e roteiro',
             'Thales Nascimento Sardinha',
             '',
-            '# Orientação',
+            '# Orientação e trilha sonora',
             'Júlio Sardinha',
             '',
             '# Feito com',

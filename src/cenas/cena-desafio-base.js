@@ -44,6 +44,7 @@ class CenaDesafioBase extends Phaser.Scene {
 
     // Mostra a comemoração. Depois de um tempinho, encerra com vitória
     vencer() {
+        tocarSom(this, 'som_acerto')
         const texto = this.add.text(LARGURA_TELA / 2, ALTURA_TELA / 2, 'DESAFIO VENCIDO!', {
             ...ESTILO_TEXTO,
             fontSize: '56px',

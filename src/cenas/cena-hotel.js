@@ -441,6 +441,7 @@ class CenaHotel extends Phaser.Scene {
     coletarTaca(taca) {
         taca.disableBody(true, true)   // some do mapa
         estadoJogo.tacasColetadas++
+        tocarSom(this, 'som_item')
         textoFlutuante(this, LARGURA_TELA / 2, ALTURA_TELA / 2 - 40, `Taça ${estadoJogo.tacasColetadas}/3`, '#ff9ccf')
         this.atualizarInterface()
     }
@@ -479,6 +480,7 @@ class CenaHotel extends Phaser.Scene {
         } else {
             estadoJogo[recompensa.atributo] += recompensa.valor
         }
+        tocarSom(this, 'som_item')
         this.cameras.main.flash(300, 255, 220, 120)   // clarão amarelado
         textoFlutuante(this, LARGURA_TELA / 2, ALTURA_TELA / 2 - 40, recompensa.mensagem, '#ffcf5a')
     }

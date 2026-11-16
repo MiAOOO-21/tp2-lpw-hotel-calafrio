@@ -215,6 +215,8 @@ class CenaBatalha extends Phaser.Scene {
     }
 
     async jogadorTocaSino() {
+        tocarSom(this, 'som_sino')
+
         this.cameras.main.flash(400, 255, 255, 200)   // clarão
         this.cameras.main.shake(300, 0.005)
 
@@ -235,6 +237,8 @@ class CenaBatalha extends Phaser.Scene {
         // Cura, mas sem passar da vida máxima
         this.jogador.vida = Math.min(this.jogador.vidaMaxima, this.jogador.vida + REGRAS_BATALHA.curaChampanhe)
         const curou = this.jogador.vida - vidaAntes
+
+        tocarSom(this, 'som_item')
 
         textoFlutuante(this, this.spriteJogador.x, this.spriteJogador.y - 80, `+${curou}`, '#7dff9a')
         this.atualizarBarras()
@@ -300,6 +304,8 @@ class CenaBatalha extends Phaser.Scene {
 
         this.jogador.vida = Math.max(0, this.jogador.vida - dano)
 
+        tocarSom(this, 'som_golpe')
+
         this.cameras.main.shake(250, 0.015)
         this.piscar(this.spriteJogador)
         textoFlutuante(this, this.spriteJogador.x, this.spriteJogador.y - 80, `-${dano}`, '#ff6b6b')
@@ -312,6 +318,7 @@ class CenaBatalha extends Phaser.Scene {
     // Aplica dano na Fera com efeitos visuais
     causarDanoNaFera(dano) {
         this.fera.vida = Math.max(0, this.fera.vida - dano)
+        tocarSom(this, 'som_golpe')
         this.piscar(this.spriteFera)
         textoFlutuante(this, this.spriteFera.x, this.spriteFera.y - 120, `-${dano}`, '#ffcf5a')
         this.atualizarBarras()

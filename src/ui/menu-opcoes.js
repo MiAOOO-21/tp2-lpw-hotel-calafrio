@@ -58,11 +58,12 @@ class MenuOpcoes {
     aoApertar(evento, direcao) {
         // evento.repeat é true quando a tecla está segurada (repetição automática do teclado). Ignoramos para não pular várias opções.
         if (!this.ativo || evento.repeat) return
-
+    
         if (direcao === 0) {
             this.confirmar()
         } else {
             this.selecionar(this.indice + direcao)
+            tocarSom(this.cena, 'som_cursor', 0.4)
         }
     }
 
@@ -83,6 +84,7 @@ class MenuOpcoes {
     // Avisa quem criou o menu qual opção foi escolhida
     confirmar() {
         if (!this.ativo) return
+        tocarSom(this.cena, 'som_confirmar', 0.5)
         this.aoEscolher(this.indice)
     }
 

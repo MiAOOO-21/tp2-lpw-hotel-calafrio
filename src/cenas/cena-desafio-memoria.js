@@ -77,6 +77,8 @@ class CenaDesafioMemoria extends CenaDesafioBase {
         const seta = this.setas[indice]
         seta.quadrado.setFillStyle(seta.cor)
 
+        tocarSom(this, 'som_cursor', 0.5)
+
         // Cancela um passo que ainda estava acontecendo e volta ao centro. Sem isso, apertar rápido faria a dançarina escorregar pela tela
         this.tweens.killTweensOf(this.dancarina)
         this.dancarina.setPosition(LARGURA_TELA / 2, 215)
@@ -123,6 +125,7 @@ class CenaDesafioMemoria extends CenaDesafioBase {
         } else {
             // Senão, errou o passo. Daí mostra de novo a mesma sequência
             this.aceitandoEntrada = false
+            tocarSom(this, 'som_erro')
             this.cameras.main.shake(250, 0.01)
             this.textoStatus.setText('Ai, pisou no pé dela! Vamos de novo...')
             this.time.delayedCall(1200, () => this.comecarRodada(false))

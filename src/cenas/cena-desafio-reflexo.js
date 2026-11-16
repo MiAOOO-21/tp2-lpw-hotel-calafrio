@@ -84,6 +84,7 @@ class CenaDesafioReflexo extends CenaDesafioBase {
             this.acertos++
             this.aceitando = false
             this.movimento.pause()   // congela o marcador para o jogador ver que acertou
+            tocarSom(this, 'som_acerto')
             textoFlutuante(this, x, this.barraY - 50, 'SHHING!', '#ffffff')
             this.atualizarAcertos()
 
@@ -93,6 +94,7 @@ class CenaDesafioReflexo extends CenaDesafioBase {
                 this.time.delayedCall(600, () => this.prepararRodada())
             }
         } else {
+            tocarSom(this, 'som_erro')
             this.cameras.main.shake(150, 0.006)
             textoFlutuante(this, x, this.barraY - 50, 'Errou!', '#ff6b6b')
         }

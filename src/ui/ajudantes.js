@@ -7,6 +7,14 @@ function esperar(cena, milissegundos) {
   })
 }
 
+// Toca os efeitos sonoros
+function tocarSom(cena, chave, volume = 0.7) {
+  // Se o arquivo existe, toca no volume 0.7
+  if (cena.cache.audio.exists(chave)) {
+    cena.sound.play(chave, { volume : volume })
+  }
+}
+
 // Toca as músicas
 function tocarMusica(cena, chave) {
   // para todos os sons

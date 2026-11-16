@@ -76,6 +76,7 @@ class CaixaDialogo {
         if (this.digitando) {
             this.completarTexto()
         } else {
+            tocarSom(this.cena, 'som_dialogo', 0.4)
             this.proximaPagina()
         }
     }

@@ -61,8 +61,14 @@ class CenaCarregamento extends Phaser.Scene {
         this.load.audio('musica_final',    'assets/audio/js-encaboclado.mp3');
 
         //Efeitos sonoros
-        // vou ficar devendo :(
-
+        this.load.audio('som_dialogo', 'assets/audio/som-dialogo.mp3')
+        this.load.audio('som_cursor', 'assets/audio/som-cursor.mp3')
+        this.load.audio('som_confirmar', 'assets/audio/som-confirmar.mp3')
+        this.load.audio('som_item', 'assets/audio/som-item.mp3')
+        this.load.audio('som_acerto', 'assets/audio/som-acerto.mp3')
+        this.load.audio('som_erro', 'assets/audio/som-erro.mp3')
+        this.load.audio('som_golpe', 'assets/audio/som-golpe.mp3')
+        this.load.audio('som_sino', 'assets/audio/som-sino.mp3')
     }
 
     // Faz a barrinha de progresso

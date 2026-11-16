@@ -58,6 +58,7 @@ class CenaDesafioQuiz extends CenaDesafioBase {
 
         if (escolha === pergunta.correta) {
             // Em caso de acerto
+            tocarSom(this, 'som_acerto')
             this.textoResultado.setColor('#7dff9a').setText('Certo!')
             await esperar(this, 900)
 
@@ -70,6 +71,7 @@ class CenaDesafioQuiz extends CenaDesafioBase {
             }
         } else {
             // Em caso de erro
+            tocarSom(this, 'som_erro')
             this.cameras.main.shake(200, 0.008)
             this.textoResultado.setColor('#ff6b6b').setText('Hmm... não é bem isso. Tente de novo!')
             await esperar(this, 1000)
